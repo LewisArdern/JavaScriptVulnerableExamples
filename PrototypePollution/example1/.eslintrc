@@ -1,0 +1,14 @@
+{ 
+  "env" : {
+    "browser" : true,
+    "es6" : true /** all es6 features except modules */
+  },
+  "plugins" : [
+    "detect-prototype-pollution"
+  ],
+  "rules" : {
+
+    /**  rules **/
+    "detect-prototype-pollution/detect-merge-recursive": 1
+  }
+}
