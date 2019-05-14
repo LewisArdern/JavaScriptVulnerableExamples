@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta http-equiv="Content-Security-Policy" content="<%- csp %>">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" nonce="<%- nonce %>"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Vulnerable CSP Examples</title>
+  <script nonce="<%- nonce %>" src="/javascripts/angular.js"></script>
+</head>
+
+<body ng-app="">
+  <div class="container">
+    <div class="p-3 mb-2 bg-secondary text-white">
+      <h1>Challenge2</h1>
+      <div class="p-3 mb-2 bg-light text-dark">
+        Content-Security-Policy: <%- csp %></br>
+        Injected Payload: <%- payload %></br>
+      </div>
+      <p>
+        <a class="btn btn-light" data-toggle="collapse" href="#help" role="button" aria-expanded="false"
+          aria-controls="help">
+          Help
+        </a>
+        <a class="btn btn-light" href="/">
+          Back
+        </a>
+      </p>
+      <div class="collapse" id="help" class="p-3 mb-2 bg-light text-dark">
+        <div class="card card-body text-dark">
+          What's resources are loaded from /javascripts/ folder? Are there any {{1336+1}} bypasses for anything in
+          there? Check the resources page!
+        </div>
+      </div>
+    </div>
+
+    <script nonce="<%- nonce %>" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script nonce="<%- nonce %>" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script nonce="<%- nonce %>" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

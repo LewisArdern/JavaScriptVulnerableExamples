@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta http-equiv="Content-Security-Policy" content="<%- csp %>">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </link>
+  <title>Vulnerable CSP Examples</title>
+</head>
+
+<body ng-app="">
+  <div class="container">
+    <div class="p-3 mb-2 bg-secondary text-white">
+      <h1>Challenge3</h1>
+      <div class="p-3 mb-2 bg-light text-dark">
+        Content-Security-Policy: <%- csp %></br>
+        Injected Payload: <%- payload %></br>
+      </div>
+      <p>
+        <a class="btn btn-light" data-toggle="collapse" href="#help" role="button" aria-expanded="false"
+          aria-controls="help">
+          Help
+        </a>
+        <a class="btn btn-light" href="/">
+          Back
+        </a>
+      </p>
+      <div class="collapse" id="help" class="p-3 mb-2 bg-light text-dark">
+        <div class="card card-body text-dark">
+          <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs">Data
+            URIs</a> What can they be used for?
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
+  <script src="/javascripts/popper.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+
+</html>

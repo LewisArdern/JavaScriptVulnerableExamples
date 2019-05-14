@@ -1,0 +1,1 @@
+A collection of generic CSP challenges.

