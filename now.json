@@ -1,4 +1,10 @@
 {
   "version": 2,
-  "builds": [{ "src": "postMessage/example1/bin/www", "use": "@now/node" }]
+  "builds": [
+    { "src": "/postMessage/example1/bin/www", "use": "@now/node-server" }
+  ],
+  "routes": [
+    { "src": "/about", "dest": "about.js" },
+    { "src": "/(.*)", "dest": "index.js" }
+  ]
 }
